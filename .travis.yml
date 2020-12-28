@@ -1,5 +1,6 @@
 language: C
 sudo: false
+osx_image: xcode12.2
 compiler:
   - gcc
   - clang
@@ -13,7 +14,6 @@ addons:
   homebrew:
     packages:
       - lua
-    update: true
 os:
   - linux
   - osx
