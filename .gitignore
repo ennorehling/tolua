@@ -33,3 +33,6 @@
 
 bin/tolua
 bin/tolua_lua
+/.vs
+/out
+/CMakeSettings.json

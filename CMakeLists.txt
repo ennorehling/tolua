@@ -5,16 +5,11 @@
 # Please note that the package source code is licensed under its own license.
 
 project ( tolua C )
-cmake_minimum_required ( VERSION 2.8 )
+cmake_minimum_required ( VERSION 3.0 )
 include ( cmake/dist.cmake )
 
 find_package ( Lua REQUIRED )
 include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
-
-# Build lib
-if ( MSVC )
-  add_definitions ( -DTOLUA5_DLL )
-endif ()
 
 file ( GLOB SRC_LIBTOLUA src/lib/*.c )
 
