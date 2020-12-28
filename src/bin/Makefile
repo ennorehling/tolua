@@ -14,15 +14,18 @@ OBJS_D=  \
 T= $(TOLUA)/bin/tolua
 T_D = $(TOLUA)/bin/tolua_lua
 
+$(TOLUA)/bin:
+	mkdir -p $(TOLUA)/bin
+
 all: $(T)
 
-$(T): $(OBJS)
+$(T): $(TOLUA)/bin $(OBJS)
 	$(CC) -o $@ $(OBJS) $(LIB) -ltolua -l$(LUA) -lm -ldl -Wl,--no-as-needed
 
 toluabind.c: $(T_D)
 	$(T_D) -o toluabind.c tolua.pkg
 
-$(T_D): $(OBJS_D)
+$(T_D): $(TOLUA)/bin $(OBJS_D)
 	$(CC) -o $@ $(OBJS_D) $(LIB) -ltolua -l$(LUA) -lm -ldl -Wl,--no-as-needed
 
 tolua_lua.o: tolua.c
