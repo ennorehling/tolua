@@ -26,5 +26,5 @@ clean:
 	rm -f $(OBJS) 
 	
 klean:
-	rm -f $T
+	rm -rf $T $(TOLUA)/lib
 
