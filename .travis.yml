@@ -13,6 +13,7 @@ addons:
   homebrew:
     packages:
       - lua
+    update: true
 os:
   - linux
   - osx
