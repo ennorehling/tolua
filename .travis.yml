@@ -10,6 +10,9 @@ addons:
   apt:
     packages:
       - liblua5.2-dev
+  homebrew:
+    packages:
+      - lua
 os:
   - linux
   - osx
