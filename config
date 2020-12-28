@@ -32,9 +32,10 @@ LUAINC=/usr/local/include
 LUALIB=/usr/local/lib
 endif
 
-ifeq (/usr/include/lua/lua.h,$(wildcard /usr/include/lua/lua.h))
+ifeq (/usr/local/include/lua/lua.h,$(wildcard /usr/local/include/lua/lua.h))
+
 LUA=lua
-LUAINC=/usr/include/$(LUA)
+LUAINC=/usr/local/include/$(LUA)
 LUALIB=/usr/local/lib
 endif
 

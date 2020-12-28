@@ -5,6 +5,7 @@ compiler:
   - gcc
   - clang
 script:
+  - pkg-config --cflags lua
   - make
   - make tests
 addons:
