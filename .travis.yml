@@ -14,6 +14,7 @@ addons:
   homebrew:
     packages:
       - lua
+      - luarocks
 os:
   - linux
   - osx
