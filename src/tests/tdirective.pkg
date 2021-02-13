@@ -9,7 +9,7 @@ ${
 $ lua_State* L = luaL_newstate();
 $	luaopen_base(L);
 $ tolua_tdirective_open(L);
-$	luaL_dofile(L,"tdirective.lua");
+$	(void)luaL_dofile(L,"tdirective.lua");
 $	lua_close(L);
 $ return 0;
 $}
