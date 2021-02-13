@@ -16,7 +16,7 @@ int main ()
 	luaL_openlibs(L);
 	tolua_tmodule_open(L);
 
-	luaL_dofile(L,"tmodule.lua");
+	(void)luaL_dofile(L,"tmodule.lua");
 
 	lua_close(L);
 	return 0;

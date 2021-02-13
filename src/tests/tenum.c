@@ -19,7 +19,7 @@ int main (void)
 	luaL_openlibs(L);
 	tolua_tenum_open(L);
 
-	luaL_dofile(L,"tenum.lua");
+	(void)luaL_dofile(L,"tenum.lua");
 
 	lua_close(L);
 	return 0;

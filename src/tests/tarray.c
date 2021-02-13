@@ -37,7 +37,7 @@ int main (void)
 	luaL_openlibs(L);
 	tolua_tarray_open(L);
 
-	luaL_dofile(L,"tarray.lua");
+	(void)luaL_dofile(L,"tarray.lua");
 
 	lua_close(L);
 	return 0;

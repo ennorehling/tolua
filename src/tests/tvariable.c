@@ -38,7 +38,7 @@ int main (void)
 	luaL_openlibs(L);
 	tolua_tvariable_open(L);
 
-	luaL_dofile(L,"tvariable.lua");
+	(void)luaL_dofile(L,"tvariable.lua");
 
 	lua_close(L);
 	return 0;
