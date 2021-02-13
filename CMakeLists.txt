@@ -13,10 +13,13 @@ include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
 
 file ( GLOB SRC_LIBTOLUA src/lib/*.c )
 
-add_library ( tolua_lib ${SRC_LIBTOLUA} )
+add_library ( tolua_lib SHARED ${SRC_LIBTOLUA} )
 target_link_libraries ( tolua_lib ${LUA_LIBRARIES} )
-set_target_properties ( tolua_lib PROPERTIES OUTPUT_NAME tolua CLEAN_DIRECT_OUTPUT
-  1 )
+set_target_properties ( tolua_lib PROPERTIES OUTPUT_NAME tolua
+	CLEAN_DIRECT_OUTPUT 1 )
+if ( WIN32 )
+  target_compile_definitions (tolua_lib PRIVATE TOLUA5_DLL)
+endif ()
 
 # Build app
 include_directories ( src/bin )
