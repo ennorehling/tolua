@@ -21,6 +21,18 @@ if ( WIN32 )
   target_compile_definitions (tolua_lib PRIVATE TOLUA5_DLL)
 endif ()
 
+# Generate toluabind.c from lua sources
+add_executable(tolua_lua src/bin/tolua.c)
+target_compile_definitions (tolua_lua PRIVATE LUA_SOURCE)
+target_link_libraries ( tolua_lua tolua_lib ${LUA_LIBRARIES} )
+add_custom_command(
+  OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/src/bin/toluabind.c
+  DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/src/bin/tolua.pkg
+  COMMAND tolua_lua
+  ARGS -o toluabind.c tolua.pkg
+  WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/bin
+)
+
 # Build app
 include_directories ( src/bin )
 set ( SRC_TOLUA src/bin/tolua.c src/bin/toluabind.c )
