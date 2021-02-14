@@ -25,9 +25,21 @@ LUA=lua
 LUAINC=/usr/include/$(LUA)
 LUALIB=/usr/lib
 
-# ubuntu
+# debian-based
 ifeq (/usr/include/lua5.2/lua.h,$(wildcard /usr/include/lua5.2/lua.h))
 LUA=lua5.2
+LUAINC=/usr/include/$(LUA)
+LUALIB=/usr/lib/x86_64-linux-gnu/
+endif
+
+ifeq (/usr/include/lua5.3/lua.h,$(wildcard /usr/include/lua5.3/lua.h))
+LUA=lua5.3
+LUAINC=/usr/include/$(LUA)
+LUALIB=/usr/lib/x86_64-linux-gnu/
+endif
+
+ifeq (/usr/include/lua5.4/lua.h,$(wildcard /usr/include/lua5.4/lua.h))
+LUA=lua5.4
 LUAINC=/usr/include/$(LUA)
 LUALIB=/usr/lib/x86_64-linux-gnu/
 endif
