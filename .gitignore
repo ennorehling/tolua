@@ -1,4 +1,5 @@
 /bin/
+*bind.c*
 # Object files
 *.o
 *.ko
