@@ -111,7 +111,6 @@ int main (int argc, char* argv[])
  }
 #else
  {
-  char* p;
   char  path[BUFSIZ] = "";
   strcpy(path,"lua/");
   lua_pushstring(L,path); lua_setglobal(L,"path");
