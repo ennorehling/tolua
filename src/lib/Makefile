@@ -23,8 +23,5 @@ $T: $(TOLUA)/lib $(OBJS)
 	$(RANLIB) $@
 
 clean:
-	rm -f $(OBJS) 
-	
-distclean:
-	rm -rf $T $(TOLUA)/lib
+	rm -f $(OBJS) $T
 
