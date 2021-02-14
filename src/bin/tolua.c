@@ -113,11 +113,7 @@ int main (int argc, char* argv[])
  {
   char* p;
   char  path[BUFSIZ] = "";
-  strcpy(path,argv[0]);
-  p = strrchr(path,'/');
-  if (p==NULL) p = strrchr(path,'\\');
-  p = (p==NULL) ? path : p+1;
-  sprintf(p,"%s","../src/bin/lua/");
+  strcpy(path,"lua/");
   lua_pushstring(L,path); lua_setglobal(L,"path");
   strcat(path,"all.lua");
   if (luaL_dofile(L,path)) {
