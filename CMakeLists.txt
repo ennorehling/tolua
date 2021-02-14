@@ -33,6 +33,6 @@ install_executable ( tolua )
 install_header ( include/ )
 install_data ( README INSTALL )
 
-set (TOLUA_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE INTERNAL "tolua headers")
+set (TOLUA_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include CACHE INTERNAL "tolua headers")
 set (TOLUA_LIBRARIES tolua_lib CACHE INTERNAL "tolua libraries")
 set (TOLUA_EXECUTABLE tolua CACHE INTERNAL "tolua executable")
