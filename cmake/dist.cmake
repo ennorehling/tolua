@@ -78,7 +78,7 @@ option ( BUILD_SHARED_LIBS "Build shared libraries" OFF )
 
 # In MSVC, prevent warnings that can occur when using standard libraries.
 if ( MSVC )
-  add_definitions ( -D_CRT_SECURE_NO_WARNINGS )
+  add_compile_definitions (_CRT_SECURE_NO_WARNINGS)
 endif ()
 
 # RPath and relative linking
