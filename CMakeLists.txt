@@ -11,6 +11,10 @@ enable_testing()
 find_package ( Lua REQUIRED )
 include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
 
+if (MSVC)
+  add_compile_options(/D_CRT_SECURE_NO_WARNINGS)
+endif(MSVC)
+
 file ( GLOB SRC_LIBTOLUA src/lib/*.c )
 
 add_library ( tolua_lib SHARED ${SRC_LIBTOLUA} )

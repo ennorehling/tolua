@@ -162,7 +162,7 @@ inline	Point average (int n, Point v[])
 	Point p(0,0);
 	for (int i=0; i<n; ++i)
 		p = p+v[i];
-	return p/n;
+	return p/(float)n;
 }
 
 inline	Point averagepointer (int n, Point* v[])
@@ -170,7 +170,7 @@ inline	Point averagepointer (int n, Point* v[])
 	Point p(0,0);
 	for (int i=0; i<n; ++i)
 		p = p+(*v[i]);
-	return p/n;
+	return p/(float)n;
 }
 
 inline	void copyvector (int n, const Point v[], Point u[])
