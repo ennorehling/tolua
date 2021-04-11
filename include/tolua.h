@@ -24,7 +24,7 @@
 #  define TOLUA_API __declspec(dllimport)
 # endif
 #else
-#  define TOLUA_API extern
+#  define TOLUA_API 
 #endif
 #endif
 
