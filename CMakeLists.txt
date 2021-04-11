@@ -4,9 +4,9 @@
 # For details see the COPYRIGHT file distributed with LuaDist.
 # Please note that the package source code is licensed under its own license.
 
-project ( tolua C )
+project ( tolua C CXX)
 cmake_minimum_required ( VERSION 3.0 )
-include ( cmake/dist.cmake )
+enable_testing()
 
 find_package ( Lua REQUIRED )
 include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
@@ -39,12 +39,9 @@ set ( SRC_TOLUA src/bin/tolua.c src/bin/toluabind.c )
 add_executable ( tolua ${SRC_TOLUA} )
 target_link_libraries ( tolua tolua_lib ${LUA_LIBRARIES} )
 
-# Install
-install_library ( tolua_lib )
-install_executable ( tolua )
-install_header ( include/ )
-install_data ( README INSTALL )
+add_subdirectory(src/tests tests)
 
 set (TOLUA_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include CACHE INTERNAL "tolua headers")
 set (TOLUA_LIBRARIES tolua_lib CACHE INTERNAL "tolua libraries")
 set (TOLUA_EXECUTABLE tolua CACHE INTERNAL "tolua executable")
+
