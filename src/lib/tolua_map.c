@@ -123,7 +123,7 @@ static int tolua_bnd_type (lua_State* L)
 
 /* Take ownership
  */
-int tolua_bnd_takeownership (lua_State* L)
+TOLUA_API int tolua_bnd_takeownership (lua_State* L)
 {
   lua_CFunction func = 0;
   if (lua_isuserdata(L,1))
