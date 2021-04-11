@@ -3,7 +3,8 @@
 # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT ======================
 
 # you need an ANSI C compiler. gcc is a popular one.
-CC= gcc
+CC=gcc
+CXX=g++
 WARN= -Wall -g
 
 # on SGI's, cc is ANSI.
@@ -63,10 +64,8 @@ INC= -I$(TOLUA)/include -I$(LUAINC)
 LIB= -L$(TOLUA)/lib -L$(LUALIB)
 
 #CFLAGS= -O2
-CFLAGS= -g
-
 CFLAGS+= $(WARN) $(INC) 
-
+CXXFLAGS= $(CFLAGS)
 ifeq (/lib/arm-linux-gnueabihf,$(wildcard /lib/arm-linux-gnueabihf))
 # Raspberry Pi: no support for long long
 CFLAGS+=-DLUA_32BITS -DLUA_C89_NUMBERS

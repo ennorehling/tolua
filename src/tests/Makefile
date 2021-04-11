@@ -28,7 +28,7 @@ tmodulebind.c: tmodule.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tnamespace: tnamespace.o tnamespacebind.o
-	$(CCPP) $(CFLAGS) -o $@ tnamespace.o tnamespacebind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tnamespace.o tnamespacebind.o $(TLIB) $(LIB) $(LIBS)
 tnamespacebind.cpp: tnamespace.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
@@ -38,27 +38,27 @@ tdirectivebind.c: tdirective.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tfunction: tfunction.o tfunctionbind.o
-	$(CCPP) $(CPPFLAGS) -o $@ tfunction.o tfunctionbind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tfunction.o tfunctionbind.o $(TLIB) $(LIB) $(LIBS)
 tfunctionbind.cpp: tfunction.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tconstant: tconstant.o tconstantbind.o
-	$(CCPP) $(CPPFLAGS) -o $@ tconstant.o tconstantbind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tconstant.o tconstantbind.o $(TLIB) $(LIB) $(LIBS)
 tconstantbind.cpp: tconstant.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tclass:  tclass.o tclassbind.o
-	$(CCPP) $(CPPFLAGS) -o $@ tclass.o tclassbind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tclass.o tclassbind.o $(TLIB) $(LIB) $(LIBS)
 tclassbind.cpp: tclass.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tpeer:  tpeer.o tpeerbind.o
-	$(CCPP) $(CPPFLAGS) -o $@ tpeer.o tpeerbind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tpeer.o tpeerbind.o $(TLIB) $(LIB) $(LIBS)
 tpeerbind.cpp: tpeer.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tinheritance:  tinheritance.o tinheritancebind.o
-	$(CCPP) $(CPPFLAGS) -o $@ tinheritance.o tinheritancebind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tinheritance.o tinheritancebind.o $(TLIB) $(LIB) $(LIBS)
 tinheritancebind.cpp: tinheritance.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
@@ -68,12 +68,12 @@ tenumbind.c: tenum.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 tvararg:  tvararg.o tvarargbind.o
-	$(CCPP) $(CPPFLAGS) -o $@ tvararg.o tvarargbind.o $(TLIB) $(LIB) $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ tvararg.o tvarargbind.o $(TLIB) $(LIB) $(LIBS)
 tvarargbind.cpp: tvararg.pkg
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
 
 .cpp.o:
-	$(CCPP) -c $(CPPFLAGS) -o $@ $<
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
 
 .pkg.cpp:
 	$(TOLUA)/bin/$(TOLUAEXE) -o $@ $<
