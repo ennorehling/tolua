@@ -4,7 +4,6 @@
 
 # you need an ANSI C compiler. gcc is a popular one.
 CC= gcc
-CCPP = g++
 WARN= -Wall -g
 
 # on SGI's, cc is ANSI.
@@ -65,10 +64,8 @@ LIB= -L$(TOLUA)/lib -L$(LUALIB)
 
 #CFLAGS= -O2
 CFLAGS= -g
-CPPFLAGS= $(CFLAGS)
 
 CFLAGS+= $(WARN) $(INC) 
-CPPFLAGS+= $(WARN) $(INC)
 
 ifeq (/lib/arm-linux-gnueabihf,$(wildcard /lib/arm-linux-gnueabihf))
 # Raspberry Pi: no support for long long

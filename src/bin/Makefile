@@ -31,6 +31,10 @@ $(T_D): $(TOLUA)/bin $(OBJS_D)
 tolua_lua.o: tolua.c
 	$(CC) -c -DLUA_SOURCE $(INC) -o $@ $<
 
-clean:
-	rm -f tolua_lua.o $(OBJS) $(OBJS_D) $(T_D) toluabind.c
+clean klean:
+	rm -f toluabind.c
+
+klean:
+	rm -f tolua_lua.o $(OBJS) $(OBJS_D) $(T_D)
+
 
