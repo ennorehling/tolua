@@ -66,8 +66,4 @@ LIB= -L$(TOLUA)/lib -L$(LUALIB)
 #CFLAGS= -O2
 CFLAGS+= $(WARN) $(INC) 
 CXXFLAGS= $(CFLAGS)
-ifeq (/lib/arm-linux-gnueabihf,$(wildcard /lib/arm-linux-gnueabihf))
-# Raspberry Pi: no support for long long
-CFLAGS+=-DLUA_32BITS -DLUA_C89_NUMBERS
-endif
 
