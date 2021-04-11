@@ -45,3 +45,7 @@ set (TOLUA_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include CACHE INTERNAL "tolua
 set (TOLUA_LIBRARIES tolua_lib CACHE INTERNAL "tolua libraries")
 set (TOLUA_EXECUTABLE tolua CACHE INTERNAL "tolua executable")
 
+install(TARGETS tolua RUNTIME DESTINATION bin)
+install(TARGETS tolua_lib LIBRARY DESTINATION lib)
+install(DIRECTORY include DESTINATION include FILES_MATCHING PATTERN "*.h")
+
