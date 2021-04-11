@@ -17,11 +17,15 @@
 #define TOLUA_H
 
 #ifndef TOLUA_API
-# ifdef TOLUA5_DLL
+#ifdef TOLA_BUILD_AS_DLL
+# ifdef TOLUA_LIB
 #  define TOLUA_API __declspec(dllexport)
 # else
-#  define TOLUA_API
+#  define TOLUA_API __declspec(dllimport)
 # endif
+#else
+#  define TOLUA_API export
+#endif
 #endif
 
 #define TOLUA_VERSION "tolua 5.2.5"
@@ -123,6 +127,8 @@ TOLUA_API int tolua_getfieldboolean (lua_State* L, int lo, int index, int def);
 
 TOLUA_API void tolua_newmetatable (lua_State* L, const char* name);
 TOLUA_API void tolua_getmetatable (lua_State* L, const char* name);
+
+TOLUA_API int tolua_bnd_takeownership(lua_State *L);
 
 #ifdef __cplusplus
 }
