@@ -7,7 +7,7 @@ tolua:
 tests:
 	cd src/tests; make all
 
-all clean:
+all klean clean:
 	cd src/lib; make $@
 	cd src/bin; make $@
 	cd src/tests; make $@
