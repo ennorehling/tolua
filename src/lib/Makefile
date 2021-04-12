@@ -15,9 +15,6 @@ T= $(TOLUA)/lib/libtolua.a
 
 all: $T
 
-$(TOLUA)/lib:
-	mkdir -p $(TOLUA)/lib
-
 $T: $(TOLUA)/lib $(OBJS)
 	$(AR) $@ $(OBJS)
 	$(RANLIB) $@

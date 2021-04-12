@@ -5,7 +5,7 @@
 # you need an ANSI C compiler. gcc is a popular one.
 CC=gcc
 CXX=g++
-WARN= -Wall -g
+WARN= -ansi -Wall -g
 
 # on SGI's, cc is ANSI.
 #CC= cc
@@ -20,7 +20,7 @@ RANLIB= ranlib
 # this should work in all unix systems.
 AR= ar rcu
 
-# defaults
+# set lua path
 LUA=lua
 LUAINC=/usr/include/$(LUA)
 LUALIB=/usr/lib
