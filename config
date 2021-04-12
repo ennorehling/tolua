@@ -3,8 +3,8 @@
 # == CHANGE THE SETTINGS BELOW TO SUIT YOUR ENVIRONMENT ======================
 
 # you need an ANSI C compiler. gcc is a popular one.
-CC=gcc
-CXX=g++
+#CC=gcc
+#CXX=g++
 WARN= -ansi -Wall -g
 
 # on SGI's, cc is ANSI.
