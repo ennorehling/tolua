@@ -48,7 +48,7 @@ set (TOLUA_EXECUTABLE tolua CACHE INTERNAL "tolua executable")
 
 install(TARGETS tolua RUNTIME DESTINATION bin)
 install(TARGETS tolua_lib LIBRARY DESTINATION lib)
-install(DIRECTORY include DESTINATION include FILES_MATCHING PATTERN "*.h")
+install(FILES include/tolua.h DESTINATION include)
 
 enable_testing()
 set(TESTS_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/src/tests)
