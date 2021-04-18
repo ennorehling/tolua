@@ -1,6 +1,5 @@
 language: C
 sudo: false
-osx_image: xcode12.2
 compiler:
   - gcc
   - clang
