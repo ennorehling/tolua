@@ -2,7 +2,11 @@
 *
 !/**/
 !*.*
+<<<<<<< Updated upstream
 
+=======
+build/
+>>>>>>> Stashed changes
 *bind.c*
 # Object files
 *.o
