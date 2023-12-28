@@ -1,3 +1,8 @@
+# all files without extension:
+*
+!/**/
+!*.*
+
 *bind.c*
 # Object files
 *.o
