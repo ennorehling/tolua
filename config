@@ -51,6 +51,13 @@ LUAINC=/opt/include
 LUALIB=/opt/lib
 endif
 
+# OSX ports
+ifeq (/opt/local/include/lua.h,$(wildcard /opt/local/include/lua.h))
+LUA=lua
+LUAINC=/opt/local/include
+LUALIB=/opt/local/lib
+endif
+
 # OSX & brew
 ifeq (/usr/local/include/lua/lua.h,$(wildcard /usr/local/include/lua/lua.h))
 LUA=lua
