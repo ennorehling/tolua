@@ -1,5 +1,9 @@
-This is  tolua-5.2.4
-This is  tolua-5.1
+This is  tolua-5.2.5
+
+* Based on tolua-5.2.4 by Waldemar Celes
+  Changes by Enno Rehling
+  this version can be downloaded on github:
+	https://github.com/ennorehling/tolua
 
 * What is tolua?
   tolua is a tool that greatly simplifies the integration of C/C++ code 
