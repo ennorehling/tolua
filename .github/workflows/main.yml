@@ -1,0 +1,24 @@
+name: continuous-integration
+on: [push, pull_request]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest CMake and ninja
+        uses: lukka/get-cmake@latest
+      - name: Update APT
+        run: sudo apt update
+      - name: Install Dependencies
+        run: sudo apt install --assume-yes liblua5.2-dev
+      - name: Checkout ECheck
+        uses: actions/checkout@v3
+        with:
+          repository: eressea/echeck
+      - iname: Build and Test
+        uses: threeal/cmake-action@v1.1.0
+        with:
+          build-dir: ${{ runner.workspace }}/build
+          build-type: Release
+          run-test: true
+          ctest-options: --output-on-failure
