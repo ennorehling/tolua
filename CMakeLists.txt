@@ -4,8 +4,9 @@
 # For details see the COPYRIGHT file distributed with LuaDist.
 # Please note that the package source code is licensed under its own license.
 
-project ( tolua C CXX)
-cmake_minimum_required ( VERSION 3.0 )
+project ( tolua C )
+cmake_minimum_required ( VERSION 3.13 )
+set(CMAKE_C_STANDARD 99)
 
 find_package ( Lua REQUIRED )
 include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
@@ -83,6 +84,7 @@ foreach (TEST IN ITEMS ${CTESTS})
 	add_test(NAME ${TEST} COMMAND ${TEST})
 endforeach()
 
+if (WITH_CXXTESTS)
 set (CXXTESTS tnamespace tclass tpeer tinheritance tconstant tfunction tvararg)
 foreach (TEST IN ITEMS ${CXXTESTS})
   tolua_generate(${TEST}
@@ -94,6 +96,7 @@ foreach (TEST IN ITEMS ${CXXTESTS})
 	target_link_libraries(${TEST} tolua_lib ${LUA_LIBRARIES})
 	add_test(NAME ${TEST} COMMAND ${TEST})
 endforeach()
+endif (WITH_CXXTESTS)
 
 set (TOLUA_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include CACHE INTERNAL "tolua headers")
 set (TOLUA_LIBRARIES tolua_lib CACHE INTERNAL "tolua libraries")
